@@ -1,4 +1,4 @@
-# Frameworks (Web Frontend)
+# 🎨 Frameworks (Web Frontend)
 ## React
 <img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=React&logoColor=black" align="right" />
 <details><summary>2022 코딩애플 리액트 강의</summary>
@@ -17,11 +17,16 @@
 - [리액트 6강 : div 너무 많으면 Component](나중에 보고 업데이트 할거임)
 </div></details>
 
-# Languages
+## Next.js
+<img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white" align="right" />
+
+# 📚 Languages
 ## Typescript
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white" align="right" />
 
-# Tools
+# 🔧 Tools
 ## Burp Suite
 - Download Link (*Burp Suite Community Edition*) : https://portswigger.net/burp/communitydownload
 - Tutorial Link : [Step 2: Intercepting HTTP traffic with Burp Proxy](https://portswigger.net/burp/documentation/desktop/getting-started/intercepting-http-traffic?utm_source=burp_suite_community&utm_medium=learn_tab&utm_campaign=onboarding)
+## Docker
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white" align="right" />
