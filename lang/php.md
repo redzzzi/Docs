@@ -96,62 +96,144 @@ Base on Web Application Programming material
 
 ## 19.4 Arithmetic Operators
 - 에러 방지를 위해 **변수를 초기화하는 것**은 필수임
-<details>
-  <summary>산술 연산자 예제 코드</summary>
-  <div markdown="1">
-  
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <style type="text/css">
-          p { margin: 0; }
-        </style>
-        <title>Using arithmetic operators</title>
-      </head>
-      <body>
-        <?php
-          $a = 5;
-          print("<p>The value of variable a is $a</p>");
-        
-          define("VALUE", 5);
-          
-          $a = $a + VALUE;
-          print("<p>Variable a after adding constant VALUE is $a</p>");
+- define(`name`,`value`,`case_insensitive`)
+  - 마지막 파라미터는 선택적임
+![image](https://github.com/user-attachments/assets/6c165941-bffb-4fa5-8822-62ce1a08bd89)
 
-          $a *= 2;
-          print("<p>Multiplying variable a by 2 yields $a</p>");
+```PHP
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      p { margin: 0; }
+    </style>
+    <title>Using arithmetic operators</title>
+  </head>
+  <body>
+    <?php
+      $a = 5;
+      print("<p>The value of variable a is $a</p>");
+    
+      define("VALUE", 5);
+      
+      $a = $a + VALUE;
+      print("<p>Variable a after adding constant VALUE is $a</p>");
 
-          if ($a < 50)
-            print("<p>Variable a is less than 50</p>");
+      $a *= 2;
+      print("<p>Multiplying variable a by 2 yields $a</p>");
 
-          $a += 40;
-          print("<p>Variable a after adding 40 is $a</p>");
+      if ($a < 50)
+        print("<p>Variable a is less than 50</p>");
 
-          if ($a < 51)
-          elseif ($a < 101)
-            print("<p>Variable a is now between 50 and 100, inclusive</p>");
-          else
-            print("<p>Variable a is now greater than 100</p>");
+      $a += 40;
+      print("<p>Variable a after adding 40 is $a</p>");
 
-          print("<p>Using a variable before initializing: $nothing</p>");
+      if ($a < 51)
+      elseif ($a < 101)
+        print("<p>Variable a is now between 50 and 100, inclusive</p>");
+      else
+        print("<p>Variable a is now greater than 100</p>");
 
-          $test = $num + VALUE;
-          print("<p>An uninitialized variable plus constant VALUE yields $test<p>");
-          
-          $str = "3 dollars";
-          $a += $str;
-          print("<p>Adding a string to variable a yields $a</p>");
-        ?>
-      </body>
-    </html>
-  </div>
-</details>
+      print("<p>Using a variable before initializing: $nothing</p>");
+
+      $test = $num + VALUE;
+      print("<p>An uninitialized variable plus constant VALUE yields $test<p>");
+      
+      $str = "3 dollars";
+      $a += $str;
+      print("<p>Adding a string to variable a yields $a</p>");
+    ?>
+  </body>
+</html>
+```
 
 ## 19.5 Initializing and Manipulating Arrays
+- *first* 배열 생성
+```PHP
+<!-- body 내부 -->
+<?php
+  print("<p class='head'>Creating the first array</p>");
+  $first[0] = "zero";
+  $first[1] = "one";
+  $first[2] = "two";
+  $first[3] = "three";
+```
+- 배열 인덱스와 값을 출력
+```
+for ($i = 0; $i < count($first); ++$i)
+  print("Element $i is $first[$i]</p>");
+print("<p class='head'>Creating the second array</p>");
+```
+- *second* 배열을 생성하기 위해 `array` 함수 호출
+```PHP
+$second = array("zero", "one", "two", "three");
+
+for ($i = 0; $i < count($second); ++$i)
+  print("Element $i is $second[$i]</p>");
+
+print("<p class='head'>Creating the third array</p>");
+```
+- nonnumeric 인덱스에 배열 값 할당
+```PHP
+$third["Amy"] = 21;
+$third["Bob"] = 18;
+$third["Carol"] = 23;
+```
+- 배열 요소를 순회하면서 각 이름과 값을 출력
+  - 배열의 내부 포인터를 `$third`로 초기화
+  - 현재 배열 포인터가 가리키는 key 값을 `$element`에 저장 (포인터 유효 시 키 반환)
+  - 배열 요소를 다음 요소로 이동
+  - 현재 키와 해당 키의 값 출력
+```PHP
+for (reset($third); $element = key($third); next($third))
+  print("<p>$element is $third[$element]</p>");
+
+print("<p class='head'>Creating the fourth array</p>");
+```
+- string 인덱스를 이용해 *fourth* 배열 생성 및 요소 출력
+```PHP
+$fourth = array(
+  "January"   => "first",    "February" => "second",
+  "March"     => "third",    "April"    => "fourth",
+  "May"       => "fifth",    "June"     => "sixth",
+  "July"      => "seventh",  "August"   => "eighth",
+  "September" => "ninth",    "October"  => "tenth",
+  "November"  => "eleventh", "December" => "twelfth");
+
+// print each element's name and value
+foreach($fourth as $element => $value)
+  print("<p>$element is the $value month</p>");
+?>
+```
+
 ## 19.6 String Comparisons
+- `count()` : 배열 요소의 개수
+- `strcmp()` : 두 문자열을 비교
+  - 0 : 두 문자열이 **같음**
+  - 1 : 두 문자열이 **다름**
+
 ## 19.7 String Processing with Regular Expressions
+| Quantifier | Matches |
+| :---: | :-- |
+| `{n}` | 정확히 n번 |
+| `{m,n}` | m에서 n번 사이 |
+| `{n,}` | n 또는 그 이상 |
+| `+` | 1 이상 |
+| `*` | 0 이상 |
+| `?` | 0 또는 1 |
+
 ## 19.8 Form Processing and Business Logic
+### Superglobal Arrays
+| Variable Name | Description |
+| :---: | :--- |
+| `$_SERVER` | 현재 돌아가는 서버에 대한 데이터 |
+| `$_ENV` | 클라이언트의 환경에 대한 데이터 |
+| `$_GET` | get 요청으로 서버에 전달된 데이터 |
+| `$_POST` | post 요청으로 서버에 전달된 데이터 |
+| `$_COOKIE` | 클라이언트의 컴퓨터에 있는 쿠키의 데이터 |
+| `$GLOBALS` | 모든 전역 변수를 담고 있는 배열 |
+
 ## 19.9 Reading from a Database
 ## 19.10 Using Cookies
 ## 19.11 Dynamic Content
