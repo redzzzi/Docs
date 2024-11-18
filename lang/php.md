@@ -95,6 +95,59 @@ Base on Web Application Programming material
 ```
 
 ## 19.4 Arithmetic Operators
+- 에러 방지를 위해 **변수를 초기화하는 것**은 필수임
+<details>
+  <summary>산술 연산자 예제 코드</summary>
+  <div markdown="1">
+  
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+          p { margin: 0; }
+        </style>
+        <title>Using arithmetic operators</title>
+      </head>
+      <body>
+        <?php
+          $a = 5;
+          print("<p>The value of variable a is $a</p>");
+        
+          define("VALUE", 5);
+          
+          $a = $a + VALUE;
+          print("<p>Variable a after adding constant VALUE is $a</p>");
+
+          $a *= 2;
+          print("<p>Multiplying variable a by 2 yields $a</p>");
+
+          if ($a < 50)
+            print("<p>Variable a is less than 50</p>");
+
+          $a += 40;
+          print("<p>Variable a after adding 40 is $a</p>");
+
+          if ($a < 51)
+          elseif ($a < 101)
+            print("<p>Variable a is now between 50 and 100, inclusive</p>");
+          else
+            print("<p>Variable a is now greater than 100</p>");
+
+          print("<p>Using a variable before initializing: $nothing</p>");
+
+          $test = $num + VALUE;
+          print("<p>An uninitialized variable plus constant VALUE yields $test<p>");
+          
+          $str = "3 dollars";
+          $a += $str;
+          print("<p>Adding a string to variable a yields $a</p>");
+        ?>
+      </body>
+    </html>
+  </div>
+</details>
+
 ## 19.5 Initializing and Manipulating Arrays
 ## 19.6 String Comparisons
 ## 19.7 String Processing with Regular Expressions
