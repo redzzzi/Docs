@@ -3,10 +3,10 @@
 Base on Web Application Programming material
 ```
 ## 목차
-- [19.1 Introduction](#19.1-introduction)
+- [19.1 Introduction](#191-introduction)
 - [19.2 Simple PHP Program](#19.2-simple-php-program)
 - [19.3 Converting Between Data Types](#19.3-converting-between-data-types)
-[19.4 Arithmetic Operators](#19-4-arithmetic-operators)
+- [19.4 Arithmetic Operators](#19-4-arithmetic-operators)
 - [19.5 Initializing and Manipulating Arrays](#19.5-initializing-and-manipulating-arrays)
 - [19.6 String Comparisons](#19.6-string-comparisons)
 - [19.7 String Processing with Regular Expressions](#19.7-string-processing-with-regular-expressions)
