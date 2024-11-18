@@ -44,6 +44,56 @@ Base on Web Application Programming material
 - 이후 h1 태그 내부에서 해당 변수를 출력
 
 ## 19.3 Converting Between Data Types
+- PHP types : int/integer, float/double/real, string, bool/boolean, array, object, resource, NULL
+### PHP에서 `.`의 역할
+- `.`은 ***문자열을 결합***할 때 사용됨
+```PHP
+<?php
+  $firstName = "red";
+  $lastName = "zzzi";
+  $fullName = $firstName . " " . $lastName;
+  echo $fullName; // 출력 : red zzzi
+```
+
+- Data type conversion
+  - `gettype()` : 파라미터의 타입을 반환하는 함수
+  - `settype()` : 변수를 지정된 타입으로 변환하는 함
+```PHP
+<!DOCTYPE html>
+<html>
+  <body>
+    <?php
+      $testString = "3.5 seconds";
+      $testDouble = 79.2;
+      $testInteger = 12;
+    ?>
+    <p class="head">Original values:</p>
+    <?php
+      print("<p>$testString is a(n) " . gettype($testString) . "</p>");
+      print("<p>$testDouble is a(n) " . gettype($testDouble) . "</p>");
+      print("<p>$testInteger is a(n) " . gettype($testInteger) . "</p>");
+    ?>
+    <p class="head">Converting to other data types:</p>
+    <?php
+      print("<p>$testString ");
+      settype($testString, "double"); // String 타입을 double 타입으로 변환
+      print(" as a double is $testString</p>");
+      print("<p>$testString ");
+      settype($testString, "integer");
+      print(" as an integer is $testString</p>");
+      settype($testString, "string");
+      print("<p class='space'>Converting back to a string results in $testString</p>);
+      $data = "98.6 degrees";
+      print("<p class='space'>Before casting: $data is a " . gettype($data) . "</p>");
+      print("<p class='space'>Using type casting instead:</p>
+            <p>as a double: " . (double)$data . "</p>" .
+            <p>as an integer: " . (integer)$data . "</p>";
+      print("<p class='space'>After casting: $data is a " . gettype($data) . "</p>");
+    ?>      
+  </body>
+</html>
+```
+
 ## 19.4 Arithmetic Operators
 ## 19.5 Initializing and Manipulating Arrays
 ## 19.6 String Comparisons
