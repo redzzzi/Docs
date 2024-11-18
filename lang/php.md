@@ -4,17 +4,17 @@ Base on Web Application Programming material
 ```
 ## 목차
 - [19.1 Introduction](#191-introduction)
-- [19.2 Simple PHP Program](#19.2-simple-php-program)
-- [19.3 Converting Between Data Types](#19.3-converting-between-data-types)
-- [19.4 Arithmetic Operators](#19-4-arithmetic-operators)
-- [19.5 Initializing and Manipulating Arrays](#19.5-initializing-and-manipulating-arrays)
-- [19.6 String Comparisons](#19.6-string-comparisons)
-- [19.7 String Processing with Regular Expressions](#19.7-string-processing-with-regular-expressions)
-- [19.8 Form Processing and Business Logic](#19.8-form-processing-and-business-logic)
-- [19.9 Reading from a Database](#19.9-reading-from-a-database)
-- [19.10 Using Cookies](#19.10-using-cookies)
-- [19.11 Dynamic Content](#19.11-dynamic-content)
-- [19.12 Web Resources](#19.12-web-resources)
+- [19.2 Simple PHP Program](#192-simple-php-program)
+- [19.3 Converting Between Data Types](#193-converting-between-data-types)
+- [19.4 Arithmetic Operators](#194-arithmetic-operators)
+- [19.5 Initializing and Manipulating Arrays](#195-initializing-and-manipulating-arrays)
+- [19.6 String Comparisons](#196-string-comparisons)
+- [19.7 String Processing with Regular Expressions](#197-string-processing-with-regular-expressions)
+- [19.8 Form Processing and Business Logic](#198-form-processing-and-business-logic)
+- [19.9 Reading from a Database](#199-reading-from-a-database)
+- [19.10 Using Cookies](#1910-using-cookies)
+- [19.11 Dynamic Content](#1911-dynamic-content)
+- [19.12 Web Resources](#1912-web-resources)
 
 ## 19.1 Introduction
 - [PHP Intro](https://www.w3schools.com/php/php_intro.asp)
