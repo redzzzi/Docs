@@ -20,6 +20,12 @@
 ## Next.js
 <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=Next.js&logoColor=white" align="right" />
 
+## PHP
+<img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" align="right" />
+
+- Tutorial Link : [W3Schools](https://www.w3schools.com/php/default.asp)
+- Note : lang/[php.md](https://github.com/redzzzi/Docs/blob/main/lang/php.md)
+
 # 📚 Languages
 ## Typescript
 <img src="https://img.shields.io/badge/Typescript-3178C6?style=flat-square&logo=Typescript&logoColor=white" align="right" />
