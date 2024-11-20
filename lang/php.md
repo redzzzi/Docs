@@ -234,6 +234,52 @@ foreach($fourth as $element => $value)
 | `$_COOKIE` | 클라이언트의 컴퓨터에 있는 쿠키의 데이터 |
 | `$GLOBALS` | 모든 전역 변수를 담고 있는 배열 |
 
+- superglobal 배열은 사용자 입력, 환경, 웹 서버에서 가져온 변수를 담고 있는 **associative array**로, 어떤 변수에서든 접근이 가능함
+  - *associative array* : key-value 구조로 되어있는 데이터 구조로, 연관 배열에서는 **키**를 사용하여 값에 접근이 가능함
+- `$_GET`과 `$_POST` 배열은 HTTP `get`, `post`로 서버에 전달된 정보를 가져옴
+- `post` 메소드를 사용하면, 프로토콜와 리소스 URL 정보가 담긴 요청을 브라우저에 **폼 데이터**로 보낼 수 있음
+- HTTP `post` 방식으로 보내진 변수들은 **URL에 나타나지 않음**
+  - 단, 변수가 URL에 나타나지 않아 해당 페이지 즐겨찾기 또는 북마크가 불가능함
+- 변수들이 길이에 제한이 없음
+<br>
+
+- `$_GET`
+  - URL 파라미터를 통해 현재 script 넘겨진 associative array 변수
+```PHP
+// 예시 URL : http://example.com/?name=Hannes
+<?php
+  echo 'Hello ' . htmlspecialchars($_GET["name"]) . '!'
+?>
+// 출력 : Hello Hannes!
+```
+- `$_POST`
+![image](https://github.com/user-attachments/assets/4a0d8a82-19fd-434e-8a1b-400914d3485a)
+- `$_REQUEST`
+  - HTTP GET, POST, COOKIE 요청으로 전달된 데이터를 포함
+  - **POST > GET > COOKIE**의 우선순위로 데이터를 병합
+### EXTRACT
+- `extract` : associative array가 인자로 넘겨졌을 때, 각 key-value마다 variable/value를 생성하는 함수
+```PHP
+<?php
+$data = array(
+  "name" => "Alice",
+  "age" => 25,
+  "job" => "Developer"
+);
+
+// 배열의 키를 변수로 변환
+extract($data);
+
+echo $name; // 출력: Alice
+echo $age;  // 출력: 25
+echo $job;  // 출력: Developer
+?>
+```
+- `die` : script 실행을 종료
+```
+💡 PHP에서 form data 처리할 때, input field를 쓰면 더 잘 이해함
+```
+
 ## 19.9 Reading from a Database
 ## 19.10 Using Cookies
 ## 19.11 Dynamic Content
