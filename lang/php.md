@@ -316,6 +316,56 @@ echo $job;  // 출력: Developer
 </details>
 
 ## 19.9 Reading from a Database
+### DB 쿼리 후 결과 보여주기
+```PHP
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+  </head>
+  <body>
+    <?php
+      // creates variable $select
+      $select= $_POST["select"];
+
+      // build SELECT query
+      $query = "SELECT " . $select . " FROM books";
+
+      // Connect to MySQL
+      if (!($database = mysqli_connect("localhost:3307", "iw3htp", "password")))
+        die("Could not connect to database</body></html>");
+
+      // open Products database
+      if (!mysqli_select_db($database, "products"))
+        die("Could not open products database</body></html>");
+
+      // query Products database
+      if (!($result = mysqli_query($database, $query))) {
+        print("<p>Could not execute query!</p>");
+        die(mysqli_error($database) . "</body></html>");
+      }
+      mysqli_close($database);
+    ?>
+    <table>
+      <?php
+        // fetch each record in result set
+        while ($row = mysqli_fetch_row($result)) {
+          // build table to display results
+          print("<tr>");
+          foreach($row as $key => $value)
+            print("<td>$value</td>");
+          print("</tr>");
+        }
+      ?>
+    </table>
+    <p>Your search yielded
+      <?php print(mysqli_num_rows($result) ?> results.</p>
+    <p>Please email comments to <a href="mailto:deitel@deitel.com">Deitel and Associates, Inc.</a></p>
+  </body>
+</html>
+```
+
 ## 19.10 Using Cookies
 ## 19.11 Dynamic Content
 ## 19.12 Web Resources
