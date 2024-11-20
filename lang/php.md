@@ -279,6 +279,41 @@ echo $job;  // 출력: Developer
 ```
 💡 PHP에서 form data 처리할 때, input field를 쓰면 더 잘 이해함
 ```
+<details>
+  <summary>Process information sent from <code>form.html</code>.</summary>
+  <div markdown="1">
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Form Validation</title>
+      </head>
+      <body>
+        <?php
+          if (!preg_match("/^\([0-9]{3}\) [0-9]{3}-[0-9]{4}$/", $_POST["phone"])) {
+            print("<p class='error'>Invalid phone number</p>
+                  <p>A valid phone number must be in the form (555) 555-5555</p>
+                  <p>Click the Back button, enter a valid phone number and resubmit.</p>
+                  <p>Thank You.</p>
+                  </body></html>");
+            die(); // 연락처 입력값 유효하지 않으면 스크립트 종료
+          }
+        ?>
+        <p>Hi <?php print($_POST["fname"]); ?>.
+          Thank you for completing the survey.
+          You have been added to the <?php print($_POST["book"]); ?>mailing list.
+        </p>
+        <p class="head">The following information has been saved in our database:</p>
+        <p>Name: <?php print($_POST["fname"]); print($_POST["lname"]); ?></p>
+        <p>Email: <?php print("$email"); ?></p>
+        <p>Phone: <?php print("$phone"); ?></p>
+        <p>OS: <?php print($_POST["os"]); ?></p>
+        <p class="head">This is only a sample form.
+                        You have not been added to a mailing list.</p>      
+      </body>
+    </html>
+  </div>
+</details>
 
 ## 19.9 Reading from a Database
 ## 19.10 Using Cookies
