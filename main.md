@@ -24,7 +24,7 @@
 <img src="https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white" align="right" />
 
 - Tutorial Link : [W3Schools](https://www.w3schools.com/php/default.asp)
-- Note : lang/[php.md](https://github.com/redzzzi/Docs/blob/main/lang/php.md)
+- Note : lang/PHP/[php.md](https://github.com/redzzzi/Docs/blob/main/lang/PHP/php.md)
 
 # 📚 Languages
 ## Typescript
