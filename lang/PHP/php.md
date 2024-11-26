@@ -367,5 +367,7 @@ echo $job;  // 출력: Developer
 ```
 
 ## 19.10 Using Cookies
+- [참고 코드](https://github.com/redzzzi/Docs/tree/main/lang/PHP/cookies)
 ## 19.11 Dynamic Content
+- [참고 코드](https://github.com/redzzzi/Docs/tree/main/lang/PHP/dynamic%20form)
 ## 19.12 Web Resources
