@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Writing a cookie to the client computer</title>
+    <style type="text/css">
+      label {
+        width: 7em; float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Click Write Cookie to save your cookie data.</h2>
+    <form method="post" action="cookies.php">
+      <div><label>Name:</label><input type="text" name="name"></div>
+      <div><label>Height:</label><input type="text" name="height"></div>
+      <div><label>Favorite Color:</label><input type="text" name="color"></div>
+      <p><input type="submit" value="Write Cookie"></p>
+    </form>
+  </body>
+</html>
